@@ -1,0 +1,2 @@
+- The create private room should be a method that returns an existing room, if there is already one
+- The private chats should be listed in rooms
