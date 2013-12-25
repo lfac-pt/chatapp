@@ -1,3 +1,12 @@
+Template.room.helpers({
+  roomName : function () {
+    if (this.room.isPrivate) {
+      return getPrivateRoomName(this.room);
+    }
+    return this.room.name;
+  }
+});
+
 Template.room.events({
   'submit form': function(e) {
     e.preventDefault();

@@ -3,11 +3,22 @@ Meteor.publish("usersData", function () {
 });
 
 Meteor.publish('rooms', function() {
-  /*TODO: only publish the rooms that the user has acess to*/
-  return Rooms.find({});
+  return Rooms.find({isPrivate: {$ne: true}});
+});
+
+Meteor.publish('singleRoom', function(roomId) {
+  return Rooms.find(roomId);
 });
 
 Meteor.publish('roomMessages', function(roomId) {
+  var room;
+
+  room = Rooms.findOne(roomId);
+
+  if (room.isPrivate === true && !_.contains(room.participants, this.userId)) {
+    throw new Meteor.Error(405, "You cannot acess these messages");
+  }
+
   return Messages.find({roomId: roomId});
 });
 

@@ -1,6 +1,12 @@
 Template.home.helpers({
   rooms: function() {
-    return Rooms.find();
+    return Rooms.find().map(function (room) {
+      if (room.isPrivate) {
+        room.name = getPrivateRoomName(room);
+      }
+
+      return room;
+    });
   },
   users : function () {
     return Meteor.users
@@ -22,7 +28,7 @@ Template.home.events({
     var roomId;
 
     roomId = Rooms.insert({
-      name: "Chat with " + getUserName(this),
+      isPrivate: true,
       participants: [Meteor.userId(), this._id]
     });
 
