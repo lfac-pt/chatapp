@@ -10,3 +10,7 @@ Meteor.publish('rooms', function() {
 Meteor.publish('roomMessages', function(roomId) {
   return Messages.find({roomId: roomId});
 });
+
+Meteor.publish('notifications', function() {
+  return Notifications.find({userId: this.userId});
+});

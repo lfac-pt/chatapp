@@ -16,3 +16,18 @@ Template.home.helpers({
       });
   }
 });
+
+Template.home.events({
+  "click button" : function () {
+    var roomId;
+
+    roomId = Rooms.insert({
+      name: "Chat with " + getUserName(this),
+      participants: [Meteor.userId(), this._id]
+    });
+
+    createChatNotification(roomId, this);
+
+    Router.go('room', {_id: roomId});
+  }
+});
