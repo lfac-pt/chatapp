@@ -4,6 +4,11 @@ Template.room.events({
 
     var message, input;
 
+    //Add the user as a participant, if it is not already
+    if (!_.contains(this.room.participants, Meteor.userId())) {
+      Rooms.update(this.room._id, {$push: {participants: Meteor.userId()}});
+    }
+
     input = $(e.target).find('[name=text]');
     message = {
       text: input.val(),
