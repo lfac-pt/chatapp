@@ -1,0 +1,13 @@
+<template name="room">
+  <h1>{{room.name}}</h1>
+
+  <ul>
+    {{#each messages}}
+      <li>{{text}}, at {{timestamp}} by {{sender.userName}}</li>
+    {{/each}}
+  </ul>
+
+  <form>
+    <input name="text" type="text">
+  </form>
+</template>
