@@ -1,2 +1,1 @@
-- The private chats should be listed in rooms
 - Implement proper error handling (Error package? and add checks to methods)

@@ -3,7 +3,10 @@ Meteor.publish("usersData", function () {
 });
 
 Meteor.publish('rooms', function() {
-  return Rooms.find({isPrivate: {$ne: true}});
+  return Rooms.find({$or: [
+    {isPrivate: {$ne: true}},
+    {participants: {$all: [this.userId]}}
+  ]});
 });
 
 Meteor.publish('singleRoom', function(roomId) {
@@ -14,6 +17,10 @@ Meteor.publish('roomMessages', function(roomId) {
   var room;
 
   room = Rooms.findOne(roomId);
+
+  if (!room) {
+    throw new Meteor.Error(404, "The room does not exist");
+  }
 
   if (room.isPrivate === true && !_.contains(room.participants, this.userId)) {
     throw new Meteor.Error(405, "You cannot acess these messages");
