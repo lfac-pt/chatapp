@@ -25,15 +25,12 @@ Template.home.helpers({
 
 Template.home.events({
   "click button" : function () {
-    var roomId;
-
-    roomId = Rooms.insert({
-      isPrivate: true,
-      participants: [Meteor.userId(), this._id]
+    Meteor.call('getARoom', this, function(error, roomId) {
+      if (error){
+        console.error(error.reason);
+      } else {
+        Router.go('room', {_id: roomId});
+      }
     });
-
-    createChatNotification(roomId, this);
-
-    Router.go('room', {_id: roomId});
   }
 });
