@@ -1,0 +1,5 @@
+<template name="tabs">
+  {{#each rooms}}
+    <li class="{{activeClass}}"><a href="{{pathFor 'room'}}">{{name}}</a></li>
+  {{/each}}
+</template>

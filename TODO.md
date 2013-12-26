@@ -1,1 +1,3 @@
 - Implement proper error handling (Error package? and add checks to methods)
+- Send notififications is the user is not on the same chat
+  - If the room is on the nav bar just highlight it
