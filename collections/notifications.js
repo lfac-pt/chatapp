@@ -14,3 +14,10 @@ createChatNotification = function(roomId, toUser) {
     userId: toUser._id
   });
 };
+
+Meteor.methods({
+  markRoomNotificationsAsRead : function (roomId) {
+    Notifications.update({roomId: roomId, userId: Meteor.userId(), read: false},
+      {$set: {read: true}}, {multi: true});
+  }
+});

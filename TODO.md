@@ -1,3 +1,11 @@
+- Fix the HCR bug!
 - Implement proper error handling (Error package? and add checks to methods)
-- Send notififications is the user is not on the same chat
-  - If the room is on the nav bar just highlight it
+- Add a timestamp to notifications
+- Send chat notifications for each message (if there is already a notification, simply update its timestamp)
+- Improvments
+  - Chat itself
+  - Rooms and users should be in two columns
+  - Rooms list should have the date of last message (and from whom)
+  - Rooms list could have some small charts
+  - Rooms list should be ordered by activity
+  - Rooms in rooms list should be highlighted when chat ocurrs
