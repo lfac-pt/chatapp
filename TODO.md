@@ -1,2 +1,2 @@
 - The private chats should be listed in rooms
-- The messages should be added in the server
+- Implement proper error handling (Error package? and add checks to methods)
