@@ -21,7 +21,7 @@ Template.tabs.helpers({
 
       //IF the current room is not active, see if need to highlight it
       if (!room.isActive &&
-          Notifications.findOne({roomId: room._id, read: false})) {
+          Notifications.findOne({roomId: room._id, read: false, userId: Meteor.userId()})) {
         room.highlightClass = "ca-highlight";
       }
 
