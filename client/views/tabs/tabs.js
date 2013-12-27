@@ -2,6 +2,12 @@ Template.tabs.helpers({
   rooms : function () {
     var rooms;
 
+    if (!Meteor.subscribe('usersData').ready()) {
+      //FIXME: Make sure we the `usersData` subscription is ready
+      //or else the users collections may be incomplete
+      return [];
+    }
+
     rooms = Session.get('currentRooms') || [];
 
     rooms = rooms.map(function (room) {

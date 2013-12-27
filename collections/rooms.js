@@ -30,6 +30,7 @@ Meteor.methods({
       });
     }
 
+
     Meteor.call("createNotification", roomId, targetUser._id);
 
     return roomId;

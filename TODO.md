@@ -1,6 +1,4 @@
-- Fix the HCR bug!
 - Implement proper error handling (Error package? and add checks to methods)
-- Add a timestamp to notifications
 - Improvments
   - Chat itself
   - Rooms and users should be in two columns
