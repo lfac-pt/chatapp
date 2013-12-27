@@ -30,7 +30,7 @@ Meteor.methods({
       });
     }
 
-    createChatNotification(roomId, targetUser);
+    Meteor.call("createNotification", roomId, targetUser._id);
 
     return roomId;
   }

@@ -2,7 +2,7 @@ Messages = new Meteor.Collection('messages');
 
 Meteor.methods({
   postMessage : function (text, roomId) {
-    var message;
+    var message, room;
 
     //Add the user as a participant, if it is not already
     Rooms.update(roomId, {$addToSet: {participants: Meteor.userId()}});
@@ -17,6 +17,12 @@ Meteor.methods({
       roomId: roomId
     };
 
-    return Messages.insert(message);
+    Messages.insert(message);
+
+    room = Rooms.findOne(roomId);
+
+    _.each(room.participants, function (userId) {
+      Meteor.call("createNotification", roomId, userId);
+    });
   }
 });
