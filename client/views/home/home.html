@@ -1,17 +1,38 @@
 <template name="home">
-  <h1>Rooms</h1>
-
-  <ul>
-    {{#each rooms}}
-      <li><a  href="{{pathFor 'room'}}">{{name}}</a></li>
-    {{/each}}
-  </ul>
-
-  <h1>Users</h1>
-
-  <ul>
-    {{#each users}}
-      <li>{{name}} <button type="button" class="btn btn-default">Chat</button></li>
-    {{/each}}
-  </ul>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Rooms</h3>
+        </div>
+        <div class="panel-body">
+          <div class="list-group">
+            {{#each rooms}}
+              <a href="{{pathFor 'room'}}" class="list-group-item">
+                <span class="{{highlightClass}} glyphicon glyphicon-chevron-right"></span>
+                {{name}}
+              </a>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Users</h3>
+        </div>
+        <div class="panel-body">
+          <div class="list-group">
+            {{#each users}}
+              <a href="#" class="ca-nasty-fake-btn list-group-item">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                {{name}}
+              </a>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>

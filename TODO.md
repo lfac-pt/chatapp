@@ -1,8 +1,7 @@
 - Implement proper error handling (Error package? and add checks to methods)
+- Not found page
 - Improvments
   - Chat itself
-  - Rooms and users should be in two columns
   - Rooms list should have the date of last message (and from whom)
-  - Rooms list could have some small charts
   - Rooms list should be ordered by activity
-  - Rooms in rooms list should be highlighted when chat ocurrs
+  - Rooms list could have some sparklines

@@ -5,6 +5,10 @@ Template.home.helpers({
         room.name = getPrivateRoomName(room);
       }
 
+      if (Notifications.findOne({roomId: room._id, read: false, userId: Meteor.userId()})) {
+        room.highlightClass = "ca-highlight";
+      }
+
       return room;
     });
   },
@@ -24,7 +28,7 @@ Template.home.helpers({
 });
 
 Template.home.events({
-  "click button" : function () {
+  "click .ca-nasty-fake-btn" : function () {
     Meteor.call('getARoom', this, function(error, roomId) {
       if (error){
         console.error(error.reason);
