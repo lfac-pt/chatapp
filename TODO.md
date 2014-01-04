@@ -1,8 +1,8 @@
 - Implement proper error handling (Error package? and add checks to methods)
 - Not found page
-- Improvments
-  - Chat itself
-  - Rooms list should have the date of last message (and from whom)
-  - Rooms list should be ordered by activity
-  - Rooms list could have some sparklines
-  - Allow to remove chats from the nav bar
+- Rooms list should have the date of last message (and from whom)
+- Rooms list should be ordered by activity
+- Rooms list could have some sparklines
+- Allow to remove chats from the nav bar
+- Allow to change to a different chat room with alt + -> and alt + <-
+- Implement a spotlight thing to search chat rooms and users

@@ -11,6 +11,7 @@ Template.room.helpers({
     groupedMessages = [];
     lastMessage = null;
 
+    this.messages.rewind();
     this.messages.forEach(function (message) {
       message.timestampAsTimeAgo = moment(message.timestamp).fromNow();
 
@@ -30,6 +31,10 @@ Template.room.helpers({
     return stringColorHash(this.sender.userId);
   }
 });
+
+Template.room.rendered = function () {
+  this.find("input[name=text]").focus();
+};
 
 Template.room.events({
   'submit form': function(e) {
