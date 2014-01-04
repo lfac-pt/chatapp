@@ -1,8 +1,13 @@
 <template name="room">
   <div class="ca-room">
-    <ul>
+    <ul class="list-unstyled">
       {{#each messages}}
-        <li>{{text}}, at {{timestamp}} by {{sender.userName}}</li>
+        <li class="ca-room-message">
+          <blockquote class="{{blockquoteClass}}">
+            <p>{{text}}</p>
+            <small>{{#if isNotMine}} {{sender.userName}}, {{/if}}{{dateAsTimeAgo timestamp}}</small>
+          </blockquote>
+        </li>
       {{/each}}
     </ul>
 

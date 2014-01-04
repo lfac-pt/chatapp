@@ -1,9 +1,9 @@
 Template.room.helpers({
-  roomName : function () {
-    if (this.room.isPrivate) {
-      return getPrivateRoomName(this.room);
-    }
-    return this.room.name;
+  isNotMine : function () {
+    return this.sender.userId !== Meteor.userId();
+  },
+  blockquoteClass : function () {
+    return this.sender.userId === Meteor.userId() ? "pull-right" : "";
   }
 });
 
