@@ -3,11 +3,11 @@
     <ul class="list-unstyled">
       {{#each groupedMessages}}
         <li class="ca-room-message">
-          <blockquote class="{{blockquoteClass}}">
+          <blockquote class="{{blockquoteClass}}" style="border-color: {{userColor}};">
             {{#each lines}}
               <p>{{this}}</p>
             {{/each}}
-            <small>{{#if isNotMine}} {{sender.userName}}, {{/if}}{{dateAsTimeAgo timestamp}}</small>
+            <small>{{#if isNotMine}}{{sender.userName}}{{else}}<strong>me</strong>{{/if}}, {{dateAsTimeAgo timestamp}}</small>
           </blockquote>
         </li>
       {{/each}}

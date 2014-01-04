@@ -5,3 +5,4 @@
   - Rooms list should have the date of last message (and from whom)
   - Rooms list should be ordered by activity
   - Rooms list could have some sparklines
+  - Allow to remove chats from the nav bar

@@ -24,6 +24,9 @@ Template.home.helpers({
           return _.extend(user, {name: _.first(user.emails).address});
         }
       });
+  },
+  userColor : function () {
+    return stringColorHash(this._id);
   }
 });
 

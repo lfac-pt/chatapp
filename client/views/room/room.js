@@ -25,6 +25,9 @@ Template.room.helpers({
     });
 
     return groupedMessages;
+  },
+  userColor : function () {
+    return stringColorHash(this.sender.userId);
   }
 });
 
