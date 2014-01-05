@@ -5,3 +5,7 @@
 .ca-room {
   margin-bottom: 20px;
 }
+
+.ca-room > form {
+  clear: both;
+}

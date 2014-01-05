@@ -6,3 +6,4 @@
 - Allow to remove chats from the nav bar
 - Allow to change to a different chat room with alt + -> and alt + <-
 - Implement a spotlight thing to search chat rooms and users
+- Implement pagination in the chat room for the messages
