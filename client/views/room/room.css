@@ -4,6 +4,14 @@
 
 .ca-room {
   margin-bottom: 20px;
+  position: relative;
+  top: -20px;
+}
+
+.ca-room > ul{
+  padding-right: 2px;
+  height: 500px;
+  overflow-y: auto;
 }
 
 .ca-room > form {

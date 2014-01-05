@@ -33,7 +33,15 @@ Template.room.helpers({
 });
 
 Template.room.rendered = function () {
+  var mostRecentMessage;
+
   this.find("input[name=text]").focus();
+
+  mostRecentMessage = this.find(".ca-room-message:last-child");
+
+  if (mostRecentMessage) {
+    mostRecentMessage.scrollIntoView();
+  }
 };
 
 Template.room.events({
