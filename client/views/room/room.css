@@ -9,3 +9,7 @@
 .ca-room > form {
   clear: both;
 }
+
+.ca-room {
+  max-width: 720px;
+}

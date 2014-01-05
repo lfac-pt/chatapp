@@ -1,3 +1,5 @@
+- Improve the design of the scroling in the room
+
 - Implement proper error handling (Error package? and add checks to methods)
 - Not found page
 - Rooms list should have the date of last message (and from whom)
