@@ -1,6 +1,12 @@
 <template name="room">
   <div class="ca-room center-block">
     <ul class="list-unstyled">
+      {{#if hasMoreMessages}}
+        <li class="ca-room-load-more">
+          <a href="{{moreMessagesPath}}">Load more <i class="glyphicon glyphicon-arrow-up"></i></a>
+        </li>
+      {{/if}}
+
       {{#each groupedMessages}}
         <li class="ca-room-message">
           <blockquote class="{{blockquoteClass}}" style="border-color: {{userColor}};">

@@ -29,6 +29,10 @@ Template.room.helpers({
   },
   userColor : function () {
     return stringColorHash(this.sender.userId);
+  },
+  hasMoreMessages: function(){
+    this.messages.rewind();
+    return Router.current().limit() == this.messages.fetch().length;
   }
 });
 

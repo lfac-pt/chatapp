@@ -13,7 +13,7 @@ Meteor.publish('singleRoom', function(roomId) {
   return Rooms.find(roomId);
 });
 
-Meteor.publish('roomMessages', function(roomId) {
+Meteor.publish('roomMessages', function(roomId, messagesLimit) {
   var room;
 
   room = Rooms.findOne(roomId);
@@ -26,7 +26,7 @@ Meteor.publish('roomMessages', function(roomId) {
     throw new Meteor.Error(405, "You cannot acess these messages");
   }
 
-  return Messages.find({roomId: roomId});
+  return Messages.find({roomId: roomId}, {limit: messagesLimit, sort: {timestamp: -1}});
 });
 
 Meteor.publish('notifications', function() {

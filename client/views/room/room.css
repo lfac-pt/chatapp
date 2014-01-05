@@ -1,4 +1,4 @@
-.ca-room .ca-room-message {
+.ca-room-message {
   clear: both;
 }
 
@@ -20,4 +20,8 @@
 
 .ca-room {
   max-width: 720px;
+}
+
+.ca-room-load-more {
+  text-align:center;
 }
